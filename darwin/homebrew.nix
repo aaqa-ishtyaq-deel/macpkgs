@@ -5,6 +5,7 @@ let
   caskPresent = cask: lib.any (x: x.name == cask) config.homebrew.casks;
   brewEnabled = config.homebrew.enable;
   homePackages = config.home-manager.users.${config.users.primaryUser.username}.home.packages;
+  pinentry-program = "${pkgs.pinentry_mac}/Applications/pinentry-mac.app/Contents/MacOS/pinentry-mac";
 in
 
 {
@@ -36,4 +37,21 @@ in
 
     "font-blex-mono-nerd-font"
   ];
+
+  home-manager.sharedModules = [
+      {
+        home.file = {
+          gpg-agent = {
+            target = ".gnupg/gpg-agent.conf";
+            text = ''
+              pinentry-program ${pinentry-program}
+              default-cache-ttl 43200
+              default-cache-ttl-ssh 43200
+              max-cache-ttl 43200
+              max-cache-ttl-ssh 43200
+            '';
+          };
+        };
+      }
+    ];
 }

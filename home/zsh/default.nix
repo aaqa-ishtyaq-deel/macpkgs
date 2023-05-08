@@ -62,6 +62,8 @@ in {
         eval "$(direnv hook zsh)"
         ZSH_AUTOSUGGEST_USE_ASYNC=true
 
+        export GPG_TTY=$(tty)
+
         for file in "$HOME/${dotDir}/"*.zsh; do
           if [[ -r "$file" ]] && [[ -f "$file" ]]; then
             source "$file"
