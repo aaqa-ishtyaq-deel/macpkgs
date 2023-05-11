@@ -42,6 +42,7 @@
       pinentry_mac
       gnupg
       diff-so-fancy
+      fzf
     ;
 
     # Dev stuff
@@ -51,6 +52,8 @@
       jq
       nodejs
       typescript
+      kubectl
+      awscli2
     ;
 
     # Useful nix related tools
@@ -64,6 +67,11 @@
       nixpkgs-review # review pull-requests on nixpkgs
       node2nix # generate Nix expressions to build NPM packages
       statix # lints and suggestions for the Nix programming language
+    ;
+
+    # GUI
+    inherit(pkgs)
+      obsidian
     ;
 
   } // lib.optionalAttrs pkgs.stdenv.isDarwin {

@@ -57,42 +57,42 @@ zstyle '*' single-ignored show
 autoload -U +X bashcompinit && bashcompinit
 
 # kubectl completion
-if (( $+commands[kubectl] )); then
-    __KUBECTL_COMPLETION_FILE="${ZSH_CACHE_DIR}/kubectl_completion"
+# if (( $+commands[kubectl] )); then
+#     __KUBECTL_COMPLETION_FILE="${ZSH_CACHE_DIR}/kubectl_completion"
 
-    if [[ ! -f $__KUBECTL_COMPLETION_FILE || ! -s $__KUBECTL_COMPLETION_FILE ]]; then
-        kubectl completion zsh >! $__KUBECTL_COMPLETION_FILE
-    fi
+#     if [[ ! -f $__KUBECTL_COMPLETION_FILE || ! -s $__KUBECTL_COMPLETION_FILE ]]; then
+#         kubectl completion zsh >! $__KUBECTL_COMPLETION_FILE
+#     fi
 
-    [[ -f $__KUBECTL_COMPLETION_FILE ]] && source $__KUBECTL_COMPLETION_FILE
+#     [[ -f $__KUBECTL_COMPLETION_FILE ]] && source $__KUBECTL_COMPLETION_FILE
 
-    unset __KUBECTL_COMPLETION_FILE
-fi
+#     unset __KUBECTL_COMPLETION_FILE
+# fi
 
-complete -F __start_kubectl k
+# complete -F __start_kubectl k
 
 # Helm completion
-if (( $+commands[helm] )); then
-    __HELM_COMPLETION_FILE="${ZSH_CACHE_DIR}/helm_completion"
+# if (( $+commands[helm] )); then
+#     __HELM_COMPLETION_FILE="${ZSH_CACHE_DIR}/helm_completion"
 
-    if [[ ! -f $__HELM_COMPLETION_FILE || ! -s $__HELM_COMPLETION_FILE ]]; then
-        helm completion zsh >! $__HELM_COMPLETION_FILE
-    fi
+#     if [[ ! -f $__HELM_COMPLETION_FILE || ! -s $__HELM_COMPLETION_FILE ]]; then
+#         helm completion zsh >! $__HELM_COMPLETION_FILE
+#     fi
 
-    [[ -f $__HELM_COMPLETION_FILE ]] && source $__HELM_COMPLETION_FILE
+#     [[ -f $__HELM_COMPLETION_FILE ]] && source $__HELM_COMPLETION_FILE
 
-    unset __HELM_COMPLETION_FILE
-fi
+#     unset __HELM_COMPLETION_FILE
+# fi
 
-# limactl completion
-if (( $+commands[limactl] )); then
-    __LIMA_COMPLETION_FILE="${ZSH_CACHE_DIR}/limactl_completion"
+# # limactl completion
+# if (( $+commands[limactl] )); then
+#     __LIMA_COMPLETION_FILE="${ZSH_CACHE_DIR}/limactl_completion"
 
-    if [[ ! -f $__LIMA_COMPLETION_FILE || ! -s $__LIMA_COMPLETION_FILE ]]; then
-      limactl completion zsh >! $__LIMA_COMPLETION_FILE
-    fi
+#     if [[ ! -f $__LIMA_COMPLETION_FILE || ! -s $__LIMA_COMPLETION_FILE ]]; then
+#       limactl completion zsh >! $__LIMA_COMPLETION_FILE
+#     fi
 
-    [[ -f $__LIMA_COMPLETION_FILE ]] && source $__LIMA_COMPLETION_FILE
+#     [[ -f $__LIMA_COMPLETION_FILE ]] && source $__LIMA_COMPLETION_FILE
 
-    unset __LIMA_COMPLETION_FILE
-fi
+#     unset __LIMA_COMPLETION_FILE
+# fi

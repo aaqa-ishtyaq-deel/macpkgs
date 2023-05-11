@@ -27,13 +27,15 @@ in {
       terminal = "xterm-256color";
       shell = "zsh";
       extraConfig = ''
-        # Fix environment variables
-        set-option -g update-environment "SSH_AUTH_SOCK \
-                                          SSH_CONNECTION \
-                                          DISPLAY"
         # Configuration
         setw -g automatic-rename off
         setw -g aggressive-resize on
+
+        # Change prefix key to C-a, easier to type, same to "screen"
+        unbind C-b
+        set -g prefix `
+        bind-key ` last-window
+        bind-key e send-prefix
 
         set -g default-terminal "xterm-256color"
         set -g history-limit 10000
@@ -142,6 +144,35 @@ in {
           set -u window-status-current-style \;\
           set -u window-status-current-format \;\
           refresh-client -S
+
+        # ==========================
+        # ===   Key bindings     ===
+        # ==========================
+
+        # # Unbind default key bindings, we're going to override
+        # unbind "\$" # rename-session
+        # unbind ,    # rename-window
+        # unbind %    # split-window -h
+        # unbind '"'  # split-window
+        # unbind }    # swap-pane -D
+        # unbind {    # swap-pane -U
+        # unbind [    # paste-buffer
+        # unbind ]
+        # unbind "'"  # select-window
+        # unbind n    # next-window
+        # unbind p    # previous-window
+        # unbind l    # last-window
+        # unbind M-n  # next window with alert
+        # unbind M-p  # next window with alert
+        # unbind o    # focus thru panes
+        # unbind &    # kill-window
+        # unbind "#"  # list-buffer
+        # unbind =    # choose-buffer
+        # unbind z    # zoom-pane
+        # unbind M-Up  # resize 5 rows up
+        # unbind M-Down # resize 5 rows down
+        # unbind M-Right # resize 5 rows right
+        # unbind M-Left # resize 5 rows left
 
         # Edit configuration and reload
         bind C-e new-window -n 'tmux.conf' "sh -c '\${EDITOR:-vim} ~/.tmux.conf && tmux source ~/.tmux.conf && tmux display \"Config reloaded\"'"
