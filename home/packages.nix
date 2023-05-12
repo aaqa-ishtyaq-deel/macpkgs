@@ -23,6 +23,11 @@
   # https://rycee.gitlab.io/home-manager/options.html#opt-programs.zoxide.enable
   programs.zoxide.enable = true;
 
+  programs.fzf = {
+    enableZshIntegration = true;
+    enable = true;
+  };
+
   home.packages = lib.attrValues ({
     # Some basics
     inherit (pkgs)

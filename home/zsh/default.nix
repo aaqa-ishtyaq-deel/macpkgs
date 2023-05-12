@@ -56,6 +56,7 @@ in {
         LC_ALL = "en_US.UTF-8";
         LC_CTYPE = "en_US";
         LC_MESSAGES="en_US";
+        TERM="xterm-256color";
       };
       initExtra = ''
         if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then . $HOME/.nix-profile/etc/profile.d/nix.sh; fi
