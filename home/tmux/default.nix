@@ -28,7 +28,7 @@ in {
       shell = "zsh";
       extraConfig = ''
         # Configuration
-        setw -g automatic-rename off
+        setw -g automatic-rename on
         setw -g aggressive-resize on
 
         # Change prefix key to C-a, easier to type, same to "screen"

@@ -93,6 +93,8 @@ in {
         [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
         [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
         [[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh" # load avn
+
+        export PATH="$HOME/.local/bin":$PATH
       '';
     };
 
@@ -102,6 +104,22 @@ in {
       ".config/zsh.d/functions.zsh".source = ./functions.zsh;
       ".config/zsh.d/options.zsh".source = ./options.zsh;
       ".config/dircolors/dircolors".source = ../dircolors/dircolors;
+
+      ".local/bin/alatheme".source = ../bin/alatheme;
+      ".local/bin/datepath".source = ../bin/datepath;
+      ".local/bin/git-checkout-ss".source = ../bin/git-checkout-ss;
+      ".local/bin/git-diff-exclude".source = ../bin/git-diff-exclude;
+      ".local/bin/hnow".source = ../bin/hnow;
+      ".local/bin/inc.awk".source = ../bin/inc.awk;
+      ".local/bin/ix".source = ../bin/ix;
+      ".local/bin/log".source = ../bin/log;
+      ".local/bin/mkdirp".source = ../bin/mkdirp;
+      ".local/bin/muxx".source = ../bin/muxx;
+      ".local/bin/notes".source = ../bin/notes;
+      ".local/bin/now".source = ../bin/now;
+      ".local/bin/nvim-mode".source = ../bin/nvim-mode;
+      ".local/bin/todo".source = ../bin/todo;
+      ".local/bin/zzip".source = ../bin/zzip;
     };
   };
 }
