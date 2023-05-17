@@ -25,7 +25,7 @@ in {
       escapeTime = 0;
       newSession = true;
       terminal = "xterm-256color";
-      shell = "zsh";
+      keyMode = "vi";
       extraConfig = ''
         # Configuration
         setw -g automatic-rename on

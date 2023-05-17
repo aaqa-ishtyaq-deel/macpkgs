@@ -94,6 +94,7 @@ in {
         [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
         [[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh" # load avn
 
+        export KNPATH="$HOME/Developer/go/src/github.com/aaqaishtyaq/jottings"
         export PATH="$HOME/.local/bin":$PATH
       '';
     };
@@ -120,6 +121,8 @@ in {
       ".local/bin/nvim-mode".source = ../bin/nvim-mode;
       ".local/bin/todo".source = ../bin/todo;
       ".local/bin/zzip".source = ../bin/zzip;
+
+      ".config/nvim/init.vim".source = ../nvim/init.vim;
     };
   };
 }

@@ -18,9 +18,6 @@
   programs.ssh.enable = true;
   programs.ssh.controlPath = "~/.ssh/%C"; # ensures the path is unique but also fixed length
 
-  # Zoxide, a faster way to navigate the filesystem
-  # https://github.com/ajeetdsouza/zoxide
-  # https://rycee.gitlab.io/home-manager/options.html#opt-programs.zoxide.enable
   programs.zoxide.enable = true;
 
   programs.fzf = {
@@ -48,17 +45,24 @@
       gnupg
       diff-so-fancy
       fzf
+      tree
+      jq
+    ;
+
+    # Runtimes
+    inherit (pkgs)
+      go
     ;
 
     # Dev stuff
     inherit (pkgs)
       cloc # source code line counter
       google-cloud-sdk
-      jq
       nodejs
       typescript
       kubectl
       awscli2
+      kubectx
     ;
 
     # Useful nix related tools
