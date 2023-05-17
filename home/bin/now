@@ -3,9 +3,9 @@
 now() {
   local date
 
-  # Use coreutils date on mac
+  Use coreutils date on mac
   if [[ $(uname -a) =~ Darwin ]]; then
-    date="gdate"
+    date="date"
   else
     date="date"
   fi

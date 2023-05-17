@@ -121,8 +121,6 @@ in {
       ".local/bin/nvim-mode".source = ../bin/nvim-mode;
       ".local/bin/todo".source = ../bin/todo;
       ".local/bin/zzip".source = ../bin/zzip;
-
-      ".config/nvim/init.vim".source = ../nvim/init.vim;
     };
   };
 }

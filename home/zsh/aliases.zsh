@@ -70,7 +70,7 @@ alias hr="cd ~/Developer/hackerrank/"
 alias tm="byobu-tmux"
 
 if [[ "${MACOS}" ]]; then
-   alias dircolors='gdircolors'
-   alias date='gdate'
-   alias ls='gls --color=auto'
+   # alias dircolors='gdircolors'
+   # alias date='gdate'
+   # alias ls='gls --color=auto'
 fi
