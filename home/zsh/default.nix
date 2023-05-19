@@ -113,7 +113,7 @@ in {
       ".local/bin/hnow".source = ../bin/hnow;
       ".local/bin/inc.awk".source = ../bin/inc.awk;
       ".local/bin/ix".source = ../bin/ix;
-      ".local/bin/log".source = ../bin/log;
+      ".local/bin/logg".source = ../bin/logg;
       ".local/bin/mkdirp".source = ../bin/mkdirp;
       ".local/bin/muxx".source = ../bin/muxx;
       ".local/bin/notes".source = ../bin/notes;
