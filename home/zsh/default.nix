@@ -96,6 +96,7 @@ in {
 
         export KNPATH="$HOME/Developer/go/src/github.com/aaqaishtyaq/jottings"
         export PATH="$HOME/.local/bin":$PATH
+        export GOPATH="$HOME/Developer/go"
       '';
     };
 
