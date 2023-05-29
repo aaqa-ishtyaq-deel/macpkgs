@@ -47,7 +47,7 @@ in {
         setw -g pane-base-index 1
 
         # Reload tmux configuration
-        bind C-r source-file ~/.tmux.conf \; display "Config reloaded"
+        bind C-l source-file ~/.tmux.conf \; display "Config reloaded"
 
         # new window and retain cwd
         bind c new-window -c "#{pane_current_path}"
@@ -104,6 +104,7 @@ in {
         wg_date="#[fg=$color_light]%H:%M#[default] | #[fg=$color_light]%A, %d %B %Y#[default]"
         wg_is_zoomed="#[fg=$color_dark,bg=$color_orange]#{?window_zoomed_flag,[Z],}#[default] "
         wg_is_keys_off="#[fg=$color_light,bg=$color_window_off_indicator]#([ $(tmux show-option -qv key-table) = 'off' ] && echo 'OFF')#[default]"
+        wg_kubectx="#(/bin/bash $HOME/.config/tmux/kube.tmux $color_status_text)"
 
         set -g status on
         set -g status-position bottom
@@ -121,7 +122,7 @@ in {
         set -g pane-active-border-style "fg=$color_main"
 
         set -g status-left "$wg_session"
-        set -g status-right "#{prefix_highlight} $wg_is_keys_off $wg_is_zoomed $wg_date"
+        set -g status-right "$wg_kubectx #{prefix_highlight} $wg_is_keys_off $wg_is_zoomed $wg_date"
 
         set -g base-index 1
         setw -g pane-base-index 1
@@ -236,6 +237,10 @@ in {
         # Hide status bar on demand
         bind C-s if -F '#{s/off//:status}' 'set status off' 'set status on'
       '';
+    };
+
+    home.file = {
+      ".config/tmux/kube.tmux".source = ./kube.tmux;
     };
   };
 }
