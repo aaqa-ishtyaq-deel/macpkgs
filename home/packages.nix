@@ -54,10 +54,13 @@
       go
     ;
 
+    gcloud = pkgs.google-cloud-sdk.withExtraComponents [
+      pkgs.google-cloud-sdk.components.gke-gcloud-auth-plugin
+    ];
+
     # Dev stuff
     inherit (pkgs)
       cloc # source code line counter
-      google-cloud-sdk
       nodejs
       typescript
       kubectl
