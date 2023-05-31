@@ -47,11 +47,28 @@
       fzf
       tree
       jq
+      yq
+      aria
     ;
 
     # Runtimes
     inherit (pkgs)
       go
+    ;
+
+    # GoLang
+    inherit (pkgs)
+      gotests
+      golangci-lint
+      gomodifytags
+      impl
+      go-tools
+      delve
+      gopls
+      gofumpt
+      go-outline
+      godef
+      golint
     ;
 
     gcloud = pkgs.google-cloud-sdk.withExtraComponents [
@@ -66,6 +83,7 @@
       kubectl
       awscli2
       kubectx
+      skopeo
     ;
 
     # Useful nix related tools
