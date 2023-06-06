@@ -49,6 +49,7 @@
       jq
       yq
       aria
+      zstd
     ;
 
     # Runtimes
