@@ -37,7 +37,7 @@ in
 
     "font-blex-mono-nerd-font"
   ];
-
+  
   home-manager.sharedModules = [
       {
         home.file = {

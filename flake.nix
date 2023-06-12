@@ -38,7 +38,14 @@
     };
 
     nixpkgsDefaults = {
-      config = { allowUnfree = true; };
+      config = {
+        allowUnfree = true;
+        permittedInsecurePackages = [
+          "ruby-2.7.8"
+          "openssl-1.1.1u"
+          "nodejs-16.20.0"
+        ];
+      };
       overlays = attrValues self.overlays ++ singleton (
         # Sub in x86 version of packages that don't build on Apple Silicon yet
         final: prev: (optionalAttrs (prev.stdenv.system == "aarch64-darwin")

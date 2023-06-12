@@ -25,6 +25,10 @@
     enable = true;
   };
 
+  nixpkgs.config.permittedInsecurePackages = [
+    "nodejs-16.20.0"
+  ];
+
   home.packages = lib.attrValues ({
     # Some basics
     inherit (pkgs)
@@ -55,6 +59,16 @@
     # Runtimes
     inherit (pkgs)
       go
+      # ruby
+      ruby_2_7
+      libxml2
+      libxslt
+      pkg-config
+      bundix
+      gnumake
+      sqlite
+      libpcap
+      postgresql
     ;
 
     # GoLang
