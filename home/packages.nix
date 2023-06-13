@@ -25,10 +25,6 @@
     enable = true;
   };
 
-  nixpkgs.config.permittedInsecurePackages = [
-    "nodejs-16.20.0"
-  ];
-
   home.packages = lib.attrValues ({
     # Some basics
     inherit (pkgs)
@@ -99,6 +95,7 @@
       awscli2
       kubectx
       skopeo
+      redis
     ;
 
     # Useful nix related tools
