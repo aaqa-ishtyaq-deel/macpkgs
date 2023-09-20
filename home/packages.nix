@@ -50,6 +50,8 @@
       yq
       aria
       zstd
+      asciinema
+      parallel
     ;
 
     # Runtimes

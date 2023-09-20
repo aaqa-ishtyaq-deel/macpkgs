@@ -153,7 +153,7 @@
           python = pkgs.mkShell {
             name = "python310";
             inputsFrom = attrValues {
-              inherit (pkgs.pkgs-master.python310Packages) black isort certbot;
+              inherit (pkgs.pkgs-master.python310Packages) black isort certbot psycopg2;
               inherit (pkgs) poetry python310 pyright;
             };
           };
