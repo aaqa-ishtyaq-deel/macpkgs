@@ -98,6 +98,7 @@
       kubectx
       skopeo
       redis
+      kubernetes-helm
     ;
 
     # Useful nix related tools
