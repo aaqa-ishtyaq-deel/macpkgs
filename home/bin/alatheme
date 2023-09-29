@@ -24,7 +24,7 @@ alatheme() {
 
   # Replcae the current colorscheme with new colorscheme
   # TODO: Maybe verify if the theme is listed in alacritty.yml
-  sed -i "s/${current_scheme}/*${new_scheme}/g" "${config}"
+  sed -i '' "s/${current_scheme}/*${new_scheme}/g" "${config}"
 
   # Change neovim theme
   if [[ "${new_scheme}" =~ "light" ]]; then
@@ -35,9 +35,8 @@ alatheme() {
     theme_mode=Dark
   fi
 
-
   current_decoration_type=$(grep -E "decorations_theme_variant:\s" "${config}" | xargs -n 1 | tail -1)
-  sed -i "s/${current_decoration_type}/${theme_mode}/g" "${config}"
+  sed -i '' "s/${current_decoration_type}/${theme_mode}/g" "${config}"
 
   nvim-mode "${vim_mode}"
 }
