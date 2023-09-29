@@ -17,6 +17,10 @@
   # Some options also set in `../darwin/homebrew.nix`.
   programs.ssh.enable = true;
   programs.ssh.controlPath = "~/.ssh/%C"; # ensures the path is unique but also fixed length
+  programs.ssh.extraConfig = ''
+Include ~/.ssh/hr_config
+Include ~/.orbstack/ssh/config
+  '';
 
   programs.zoxide.enable = true;
 
@@ -125,4 +129,22 @@
       m-cli # useful macOS CLI commands
     ;
   });
+
+  home.file = {
+    ".local/bin/alatheme".source = ./bin/alatheme;
+    ".local/bin/datepath".source = ./bin/datepath;
+    ".local/bin/git-checkout-ss".source = ./bin/git-checkout-ss;
+    ".local/bin/git-diff-exclude".source = ./bin/git-diff-exclude;
+    ".local/bin/hnow".source = ./bin/hnow;
+    ".local/bin/inc.awk".source = ./bin/inc.awk;
+    ".local/bin/ix".source = ./bin/ix;
+    ".local/bin/logg".source = ./bin/logg;
+    ".local/bin/mkdirp".source = ./bin/mkdirp;
+    ".local/bin/muxx".source = ./bin/muxx;
+    ".local/bin/notes".source = ./bin/notes;
+    ".local/bin/now".source = ./bin/now;
+    ".local/bin/nvim-mode".source = ./bin/nvim-mode;
+    ".local/bin/todo".source = ./bin/todo;
+    ".local/bin/zzip".source = ./bin/zzip;
+  };
 }
