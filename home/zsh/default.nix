@@ -91,6 +91,7 @@ in {
 
         export PLAN9=/usr/local/plan9
         export PATH=$PATH:$PLAN9/bin
+        PATH=$PATH:~/Library/Python/3.9/bin
 
         export NVM_DIR="$HOME/.nvm"
         [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
