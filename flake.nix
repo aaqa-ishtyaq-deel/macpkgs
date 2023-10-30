@@ -154,7 +154,7 @@
             name = "python310";
             inputsFrom = attrValues {
               inherit (pkgs.pkgs-master.python310Packages) black isort certbot psycopg2;
-              inherit (pkgs) poetry python310 pyright;
+              inherit (pkgs) poetry python310 pyright bigquery-schema-generatori;
             };
           };
         };
