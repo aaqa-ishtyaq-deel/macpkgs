@@ -38,7 +38,7 @@ in {
           nvim-treesitter
       ];
 
-      # extraConfig = pkgs.lib.readFile ./extra.vim;
+      extraConfig = pkgs.lib.readFile ./extra.vim;
     };
 
     home.sessionVariables = {

@@ -37,8 +37,8 @@
 
   # Add shells installed by nix to /etc/shells file
   environment.shells = with pkgs; [
-    bashInteractive
     zsh
+    bashInteractive
     bash
     dash
     ksh

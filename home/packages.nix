@@ -56,6 +56,7 @@ Include ~/.orbstack/ssh/config
       zstd
       asciinema
       parallel
+      mosh
     ;
 
     # Runtimes
