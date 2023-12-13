@@ -63,6 +63,8 @@ in {
           . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
         fi
 
+        eval "$(/opt/homebrew/bin/brew shellenv)"
+
         eval "$(direnv hook zsh)"
         ZSH_AUTOSUGGEST_USE_ASYNC=true
 

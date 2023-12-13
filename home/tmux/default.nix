@@ -27,6 +27,8 @@ in {
       terminal = "xterm-256color";
       keyMode = "vi";
       extraConfig = ''
+        set -g default-command /etc/profiles/per-user/aaqa/bin/zsh
+
         # Configuration
         setw -g automatic-rename on
         setw -g aggressive-resize on

@@ -57,6 +57,7 @@ Include ~/.orbstack/ssh/config
       asciinema
       parallel
       mosh
+      gnutar
     ;
 
     # Runtimes
@@ -117,11 +118,17 @@ Include ~/.orbstack/ssh/config
       nixpkgs-review # review pull-requests on nixpkgs
       node2nix # generate Nix expressions to build NPM packages
       statix # lints and suggestions for the Nix programming language
+      nil # nix lsp
     ;
 
     # GUI
     inherit(pkgs)
       obsidian
+    ;
+
+    # Node Packages
+    inherit(pkgs.nodePackages)
+      pyright
     ;
 
   } // lib.optionalAttrs pkgs.stdenv.isDarwin {
