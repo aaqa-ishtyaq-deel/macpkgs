@@ -62,7 +62,7 @@ Include ~/.orbstack/ssh/config
 
     # Runtimes
     inherit (pkgs)
-      go
+      go_1_21
       # ruby
       ruby_2_7
       libxml2
