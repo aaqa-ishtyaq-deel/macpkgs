@@ -127,8 +127,8 @@
         m2-pro = makeOverridable self.lib.mkDarwinSystem (primaryUserDefaults // {
           modules = attrValues self.darwinModules ++ singleton {
             nixpkgs = nixpkgsDefaults;
-            networking.computerName = "hr-mbp-16";
-            networking.hostName = "hr-mbp-16";
+            networking.computerName = "aaqaishtyaq-hr";
+            networking.hostName = "aaqaishtyaq-hr";
             networking.knownNetworkServices = [
               "Wi-Fi"
               "USB 10/100/1000 LAN"

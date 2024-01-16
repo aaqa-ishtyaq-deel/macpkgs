@@ -19,11 +19,9 @@ in
   homebrew.global.brewfile = true;
 
   homebrew.taps = [
-    "homebrew/cask"
     "homebrew/cask-drivers"
     "homebrew/cask-fonts"
     "homebrew/cask-versions"
-    "homebrew/core"
     "homebrew/services"
     "aaqaishtyaq/tap"
   ];
