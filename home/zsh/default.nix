@@ -106,6 +106,15 @@ in {
         export KNPATH="$HOME/Developer/go/src/github.com/aaqaishtyaq/jottings"
         export PATH="$HOME/.local/bin":$PATH
         export GOPATH="$HOME/Developer/go"
+
+        # jpeg is keg-only, which means it was not symlinked into /opt/homebrew,
+        # because it conflicts with `jpeg-turbo`.
+        export PATH="/opt/homebrew/opt/jpeg/bin:$PATH"
+        # For compilers to find jpeg need to set:
+        export LDFLAGS="-L/opt/homebrew/opt/jpeg/lib"
+        export CPPFLAGS="-I/opt/homebrew/opt/jpeg/include"
+        # For pkg-config to find jpeg need to set:
+        export PKG_CONFIG_PATH="/opt/homebrew/opt/jpeg/lib/pkgconfig"
       '';
     };
 

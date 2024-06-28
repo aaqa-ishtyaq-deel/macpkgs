@@ -44,3 +44,12 @@ fi
 if [[ -z "$XDG_CACHE_HOME" ]]; then
 	export XDG_CACHE_HOME="$HOME/.cache"
 fi
+
+# jpeg is keg-only, which means it was not symlinked into /opt/homebrew,
+# because it conflicts with `jpeg-turbo`.
+export PATH="/opt/homebrew/opt/jpeg/bin:$PATH"
+# For compilers to find jpeg need to set:
+export LDFLAGS="-L/opt/homebrew/opt/jpeg/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/jpeg/include"
+# For pkg-config to find jpeg need to set:
+export PKG_CONFIG_PATH="/opt/homebrew/opt/jpeg/lib/pkgconfig"

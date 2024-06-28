@@ -58,6 +58,7 @@ Include ~/.orbstack/ssh/config
       parallel
       mosh
       gnutar
+      aws-sam-cli
     ;
 
     # Runtimes
@@ -73,6 +74,7 @@ Include ~/.orbstack/ssh/config
       sqlite
       libpcap
       postgresql
+      zlib
     ;
 
     # GoLang
@@ -105,6 +107,11 @@ Include ~/.orbstack/ssh/config
       skopeo
       redis
       kubernetes-helm
+      python2
+    ;
+
+    inherit (pkgs.unixtools)
+      watch
     ;
 
     # Useful nix related tools
