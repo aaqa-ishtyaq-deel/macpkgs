@@ -18,9 +18,9 @@
   programs.ssh.enable = true;
   programs.ssh.controlPath = "~/.ssh/%C"; # ensures the path is unique but also fixed length
   programs.ssh.extraConfig = ''
-Include ~/.ssh/hr_config
-Include ~/.orbstack/ssh/config
+Include ~/.ssh/deel_config
   '';
+# Include ~/.orbstack/ssh/config
 
   programs.zoxide.enable = true;
 
@@ -58,22 +58,22 @@ Include ~/.orbstack/ssh/config
       parallel
       mosh
       gnutar
-      aws-sam-cli
+      # aws-sam-cli
     ;
 
     # Runtimes
     inherit (pkgs)
       go_1_21
       # ruby
-      ruby_2_7
-      libxml2
-      libxslt
+      # ruby_2_7
+      # libxml2
+      # libxslt
       pkg-config
       bundix
       gnumake
       sqlite
       libpcap
-      postgresql
+      # postgresql
       zlib
     ;
 
@@ -105,9 +105,9 @@ Include ~/.orbstack/ssh/config
       awscli2
       kubectx
       skopeo
-      redis
+      # redis
       kubernetes-helm
-      python2
+      # python2
     ;
 
     inherit (pkgs.unixtools)
