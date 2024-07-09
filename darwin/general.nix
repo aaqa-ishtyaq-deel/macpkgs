@@ -16,14 +16,6 @@
   ];
   programs.nix-index.enable = true;
 
-  # Fonts
-  fonts.fontDir.enable = true;
-  fonts.fonts = with pkgs; [
-     recursive
-     ibm-plex
-     (nerdfonts.override { fonts = [ "IBMPlexMono" ]; })
-   ];
-
   # Keyboard
   system.keyboard.enableKeyMapping = true;
   system.keyboard.remapCapsLockToEscape = true;

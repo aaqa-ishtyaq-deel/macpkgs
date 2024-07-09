@@ -28,13 +28,13 @@
     inherit (darwin.lib) darwinSystem;
     inherit (inputs.nixpkgs-unstable.lib) attrValues makeOverridable optionalAttrs singleton;
 
-    homeStateVersion = "23.05";
+    homeStateVersion = "24.05";
 
     primaryUserDefaults = {
-      username = "aaqa";
-      fullName = "aaqa";
+      username = "aaqaishtyaq";
+      fullName = "aaqaishtyaq";
       email = "aaqa.ishtyaq@deel.com";
-      nixConfigDirectory = "/Users/aaqa/Developer/go/src/letsdeel/macpkgs";
+      nixConfigDirectory = "/Users/aaqa/.config/nixpkgs";
     };
 
     nixpkgsDefaults = {
@@ -128,8 +128,8 @@
         m3-max = makeOverridable self.lib.mkDarwinSystem (primaryUserDefaults // {
           modules = attrValues self.darwinModules ++ singleton {
             nixpkgs = nixpkgsDefaults;
-            networking.computerName = "aaqaishtyaq-hr";
-            networking.hostName = "aaqaishtyaq-hr";
+            networking.computerName = "aaqa-ishtyaq-deel";
+            networking.hostName = "aaqa-ishtyaq-deel";
             networking.knownNetworkServices = [
               "Wi-Fi"
               "USB 10/100/1000 LAN"

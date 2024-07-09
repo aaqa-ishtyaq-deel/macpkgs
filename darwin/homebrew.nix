@@ -19,15 +19,12 @@ in
   homebrew.global.brewfile = true;
 
   homebrew.taps = [
-    "homebrew/cask-drivers"
-    "homebrew/cask-fonts"
-    "homebrew/cask-versions"
     "homebrew/services"
     "aaqaishtyaq/tap"
   ];
 
   homebrew.brews = [
-    # "jmeter"
+    #
   ];
 
   # If an app isn't available in the Mac App Store, or the version in the App Store has
@@ -35,8 +32,10 @@ in
   homebrew.casks = [
     "hammerspoon"
     "visual-studio-code"
-
-    "font-blex-mono-nerd-font"
+    "openlens"
+    "meetingbar"
+    "dbeaver-community"
+    # "font-blex-mono-nerd-font"
   ];
   home-manager.sharedModules = [
       {

@@ -54,7 +54,6 @@ Include ~/.ssh/deel_config
       yq
       aria
       zstd
-      asciinema
       parallel
       mosh
       gnutar
@@ -63,7 +62,7 @@ Include ~/.ssh/deel_config
 
     # Runtimes
     inherit (pkgs)
-      go_1_21
+      go_1_22
       # ruby
       # ruby_2_7
       # libxml2
@@ -134,9 +133,9 @@ Include ~/.ssh/deel_config
     ;
 
     # Node Packages
-    inherit(pkgs.nodePackages)
-      pyright
-    ;
+    # inherit(pkgs.nodePackages)
+    #   pyright
+    # ;
 
   } // lib.optionalAttrs pkgs.stdenv.isDarwin {
     inherit (pkgs)

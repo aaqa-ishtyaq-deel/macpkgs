@@ -1,7 +1,7 @@
 #!/bin/bash
 
 cd "${HOME}" || exit
-MUX_SESSION_NAME="HACKERRANK"
+MUX_SESSION_NAME="DEEL"
 tmux new -s "${MUX_SESSION_NAME}" -n "ZSH" -d
 for i in {2..4}; do
   tmux new-window -t "${MUX_SESSION_NAME}:${i}" -n "ZSH" -d
