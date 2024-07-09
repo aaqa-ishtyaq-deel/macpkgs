@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
-nix --extra-experimental-features "nix-command flakes" build ".#darwinConfigurations.m2-pro.system"
+nix --extra-experimental-features "nix-command flakes" build ".#darwinConfigurations.m3-max.system"
 
-./result/sw/bin/darwin-rebuild switch --flake '.#m2-pro'
+./result/sw/bin/darwin-rebuild switch --flake '.#m3-max'

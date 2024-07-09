@@ -1,5 +1,5 @@
 {
-  description = "Aaqa's darwin system at HackerRank";
+  description = "Aaqa's darwin system at Deel";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/master";
@@ -33,8 +33,8 @@
     primaryUserDefaults = {
       username = "aaqa";
       fullName = "aaqa";
-      email = "aaqa@hackerrank.com";
-      nixConfigDirectory = "/Users/aaqa/Developer/hacker_ops";
+      email = "aaqa.ishtyaq@deel.com";
+      nixConfigDirectory = "/Users/aaqa/Developer/go/src/letsdeel/macpkgs";
     };
 
     nixpkgsDefaults = {
@@ -125,7 +125,7 @@
         };
 
         # My apple silicon macOS work laptop
-        m2-pro = makeOverridable self.lib.mkDarwinSystem (primaryUserDefaults // {
+        m3-max = makeOverridable self.lib.mkDarwinSystem (primaryUserDefaults // {
           modules = attrValues self.darwinModules ++ singleton {
             nixpkgs = nixpkgsDefaults;
             networking.computerName = "aaqaishtyaq-hr";
