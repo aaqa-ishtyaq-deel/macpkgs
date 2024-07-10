@@ -5,6 +5,7 @@
     ./tmux/default.nix
     ./nvim/default.nix
     ./alacritty/default.nix
+    ./hammerspoon/default.nix
   ];
 
   aaqaishtyaq = {
@@ -12,5 +13,6 @@
     tmux.enable = true;
     nvim.enable = true;
     alacritty.enable = true;
+    hammerspoon.enable = true;
   };
 }

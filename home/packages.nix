@@ -106,7 +106,7 @@ Include ~/.ssh/deel_config
       skopeo
       # redis
       kubernetes-helm
-      # python2
+      k9s
     ;
 
     inherit (pkgs.unixtools)
@@ -129,7 +129,6 @@ Include ~/.ssh/deel_config
 
     # GUI
     inherit(pkgs)
-      obsidian
     ;
 
     # Node Packages
@@ -151,7 +150,6 @@ Include ~/.ssh/deel_config
     ".local/bin/git-diff-exclude".source = ./bin/git-diff-exclude;
     ".local/bin/hnow".source = ./bin/hnow;
     ".local/bin/inc.awk".source = ./bin/inc.awk;
-    ".local/bin/ix".source = ./bin/ix;
     ".local/bin/logg".source = ./bin/logg;
     ".local/bin/mkdirp".source = ./bin/mkdirp;
     ".local/bin/muxx".source = ./bin/muxx;

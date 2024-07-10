@@ -24,7 +24,7 @@ in
   ];
 
   homebrew.brews = [
-    #
+    "libpq"
   ];
 
   # If an app isn't available in the Mac App Store, or the version in the App Store has
@@ -35,6 +35,9 @@ in
     "openlens"
     "meetingbar"
     "dbeaver-community"
+    "firefox"
+    "obsidian"
+    "alacritty"
     # "font-blex-mono-nerd-font"
   ];
   home-manager.sharedModules = [

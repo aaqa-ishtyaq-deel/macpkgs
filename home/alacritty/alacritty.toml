@@ -51,7 +51,7 @@ TERM = "alacritty"
 size = 17.0
 
 [font.bold]
-family = "Berkeley Mono"
+family = "BlexMono Nerd Font"
 style = "Bold"
 
 [font.glyph_offset]
@@ -59,11 +59,11 @@ x = 0
 y = 0
 
 [font.italic]
-family = "Berkeley Mono"
+family = "BlexMono Nerd Font"
 style = "Italic"
 
 [font.normal]
-family = "Berkeley Mono"
+family = "BlexMono Nerd Font"
 style = "Regular"
 
 [font.offset]
