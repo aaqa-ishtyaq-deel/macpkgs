@@ -131,6 +131,11 @@ Include ~/.ssh/deel_config
     inherit(pkgs)
     ;
 
+    # Deel specific
+    inherit(pkgs)
+      natscli
+    ;
+
     # Node Packages
     # inherit(pkgs.nodePackages)
     #   pyright
