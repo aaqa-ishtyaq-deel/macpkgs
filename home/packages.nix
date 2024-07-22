@@ -163,5 +163,6 @@ Include ~/.ssh/deel_config
     ".local/bin/nvim-mode".source = ./bin/nvim-mode;
     ".local/bin/todo".source = ./bin/todo;
     ".local/bin/zzip".source = ./bin/zzip;
+    ".gitignore".source = ./bin/gitignore;
   };
 }
