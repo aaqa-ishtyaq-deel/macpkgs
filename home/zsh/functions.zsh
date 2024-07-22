@@ -142,3 +142,22 @@ _rx() {
 pd() {
     pushd "$@"
 }
+
+
+###########################
+# Deel specific functions #
+###########################
+
+giger_login() {
+    aws sso login --profile giger-eks
+    aws eks update-kubeconfig --name giger --region eu-west-1 --profile giger-eks
+}
+
+shared_login() {
+    aws sso login --profile shared
+}
+
+deel_login() {
+    giger_login
+    shared_login
+}

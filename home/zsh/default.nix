@@ -28,7 +28,7 @@ in {
       shellAliases = {
         k = "kubectl";
         kctx = "kubectx";
-        kns = "kunens";
+        kns = "kubens";
         kx = "kubectx";
         ls = "ls --color=auto";
         l = "ls -lah";
