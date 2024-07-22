@@ -19,8 +19,8 @@
   programs.ssh.controlPath = "~/.ssh/%C"; # ensures the path is unique but also fixed length
   programs.ssh.extraConfig = ''
 Include ~/.ssh/deel_config
+Include ~/.orbstack/ssh/config
   '';
-# Include ~/.orbstack/ssh/config
 
   programs.zoxide.enable = true;
 
@@ -57,22 +57,16 @@ Include ~/.ssh/deel_config
       parallel
       mosh
       gnutar
-      # aws-sam-cli
     ;
 
     # Runtimes
     inherit (pkgs)
       go_1_22
-      # ruby
-      # ruby_2_7
-      # libxml2
-      # libxslt
       pkg-config
       bundix
       gnumake
       sqlite
       libpcap
-      # postgresql
       zlib
     ;
 
