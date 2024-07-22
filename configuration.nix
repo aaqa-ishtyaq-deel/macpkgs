@@ -24,7 +24,7 @@
   programs.git = {
     enable = true;
     userName = "Aaqa Ishtyaq";
-    userEmail = "aaqa@hackerrank.com";
+    userEmail = "aaqa.ishtyaq@deel.com";
   };
 
   # Used for backwards compatibility, please read the changelog before changing.

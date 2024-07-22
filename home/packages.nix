@@ -18,7 +18,7 @@
   programs.ssh.enable = true;
   programs.ssh.controlPath = "~/.ssh/%C"; # ensures the path is unique but also fixed length
   programs.ssh.extraConfig = ''
-Include ~/.ssh/hr_config
+Include ~/.ssh/deel_config
 Include ~/.orbstack/ssh/config
   '';
 
@@ -54,26 +54,19 @@ Include ~/.orbstack/ssh/config
       yq
       aria
       zstd
-      asciinema
       parallel
       mosh
       gnutar
-      aws-sam-cli
     ;
 
     # Runtimes
     inherit (pkgs)
-      go_1_21
-      # ruby
-      ruby_2_7
-      libxml2
-      libxslt
+      go_1_22
       pkg-config
       bundix
       gnumake
       sqlite
       libpcap
-      postgresql
       zlib
     ;
 
@@ -105,9 +98,9 @@ Include ~/.orbstack/ssh/config
       awscli2
       kubectx
       skopeo
-      redis
+      # redis
       kubernetes-helm
-      python2
+      k9s
     ;
 
     inherit (pkgs.unixtools)
@@ -130,13 +123,17 @@ Include ~/.orbstack/ssh/config
 
     # GUI
     inherit(pkgs)
-      obsidian
+    ;
+
+    # Deel specific
+    inherit(pkgs)
+      natscli
     ;
 
     # Node Packages
-    inherit(pkgs.nodePackages)
-      pyright
-    ;
+    # inherit(pkgs.nodePackages)
+    #   pyright
+    # ;
 
   } // lib.optionalAttrs pkgs.stdenv.isDarwin {
     inherit (pkgs)
@@ -152,7 +149,6 @@ Include ~/.orbstack/ssh/config
     ".local/bin/git-diff-exclude".source = ./bin/git-diff-exclude;
     ".local/bin/hnow".source = ./bin/hnow;
     ".local/bin/inc.awk".source = ./bin/inc.awk;
-    ".local/bin/ix".source = ./bin/ix;
     ".local/bin/logg".source = ./bin/logg;
     ".local/bin/mkdirp".source = ./bin/mkdirp;
     ".local/bin/muxx".source = ./bin/muxx;
@@ -161,5 +157,6 @@ Include ~/.orbstack/ssh/config
     ".local/bin/nvim-mode".source = ./bin/nvim-mode;
     ".local/bin/todo".source = ./bin/todo;
     ".local/bin/zzip".source = ./bin/zzip;
+    ".gitignore".source = ./bin/gitignore;
   };
 }

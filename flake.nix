@@ -1,5 +1,5 @@
 {
-  description = "Aaqa's darwin system at HackerRank";
+  description = "Aaqa's darwin system at Deel";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/master";
@@ -28,13 +28,13 @@
     inherit (darwin.lib) darwinSystem;
     inherit (inputs.nixpkgs-unstable.lib) attrValues makeOverridable optionalAttrs singleton;
 
-    homeStateVersion = "23.05";
+    homeStateVersion = "24.05";
 
     primaryUserDefaults = {
-      username = "aaqa";
-      fullName = "aaqa";
-      email = "aaqa@hackerrank.com";
-      nixConfigDirectory = "/Users/aaqa/Developer/hacker_ops";
+      username = "aaqaishtyaq";
+      fullName = "aaqaishtyaq";
+      email = "aaqa.ishtyaq@deel.com";
+      nixConfigDirectory = "/Users/aaqa/.config/nixpkgs";
     };
 
     nixpkgsDefaults = {
@@ -125,11 +125,11 @@
         };
 
         # My apple silicon macOS work laptop
-        m2-pro = makeOverridable self.lib.mkDarwinSystem (primaryUserDefaults // {
+        m3-max = makeOverridable self.lib.mkDarwinSystem (primaryUserDefaults // {
           modules = attrValues self.darwinModules ++ singleton {
             nixpkgs = nixpkgsDefaults;
-            networking.computerName = "aaqaishtyaq-hr";
-            networking.hostName = "aaqaishtyaq-hr";
+            networking.computerName = "aaqa-ishtyaq-deel";
+            networking.hostName = "aaqa-ishtyaq-deel";
             networking.knownNetworkServices = [
               "Wi-Fi"
               "USB 10/100/1000 LAN"

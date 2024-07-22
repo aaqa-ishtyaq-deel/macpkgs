@@ -11,18 +11,9 @@
   # `home-manager` currently has issues adding them to `~/Applications`
   # Issue: https://github.com/nix-community/home-manager/issues/1341
   environment.systemPackages = with pkgs; [
-    alacritty
     terminal-notifier
   ];
   programs.nix-index.enable = true;
-
-  # Fonts
-  fonts.fontDir.enable = true;
-  fonts.fonts = with pkgs; [
-     recursive
-     ibm-plex
-     (nerdfonts.override { fonts = [ "IBMPlexMono" ]; })
-   ];
 
   # Keyboard
   system.keyboard.enableKeyMapping = true;

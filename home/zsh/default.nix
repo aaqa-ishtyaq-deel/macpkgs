@@ -14,7 +14,9 @@ in {
       enable = true;
       dotDir = "${dotDir}";
       enableCompletion = true;
-      enableAutosuggestions = true;
+      autosuggestion = {
+        enable = true;
+      };
       history = {
         path = "$HOME/${dotDir}/.zsh_history";
         save = 50000;
@@ -26,7 +28,7 @@ in {
       shellAliases = {
         k = "kubectl";
         kctx = "kubectx";
-        kns = "kunens";
+        kns = "kubens";
         kx = "kubectx";
         ls = "ls --color=auto";
         l = "ls -lah";
@@ -115,6 +117,10 @@ in {
         export CPPFLAGS="-I/opt/homebrew/opt/jpeg/include"
         # For pkg-config to find jpeg need to set:
         export PKG_CONFIG_PATH="/opt/homebrew/opt/jpeg/lib/pkgconfig"
+
+        ### RANCHER DESKTOP
+        export PATH="/Users/aaqaishtyaq/.rd/bin:$PATH"
+        export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
       '';
     };
 
