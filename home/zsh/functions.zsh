@@ -161,3 +161,16 @@ deel_login() {
     giger_login
     shared_login
 }
+
+deel_helm_generate_template() {
+    local serviceName
+    serviceName="$1"
+    rm -rf "$servicename-*.yaml"
+
+    (
+        helm template charts/$serviceName -f prod/config/deel-appset/values-$serviceName.yaml > $serviceName-pr-prod-generated.yaml || :
+    ) &&
+    (
+        helm template ../gitops-applications-dev/charts/$serviceName -f ../gitops-applications-dev/prod/config/deel-appset/values-$serviceName.yaml > $serviceName-dev-prod-generated.yaml || :
+    )
+}
