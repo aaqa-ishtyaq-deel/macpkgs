@@ -147,6 +147,7 @@ Include ~/.orbstack/ssh/config
     ".local/bin/datepath".source = ./bin/datepath;
     ".local/bin/git-checkout-ss".source = ./bin/git-checkout-ss;
     ".local/bin/git-diff-exclude".source = ./bin/git-diff-exclude;
+    ".local/bin/git-reset-fetch-head".source = ./bin/git-reset-fetch-head;
     ".local/bin/hnow".source = ./bin/hnow;
     ".local/bin/inc.awk".source = ./bin/inc.awk;
     ".local/bin/logg".source = ./bin/logg;
