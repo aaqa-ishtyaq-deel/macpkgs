@@ -38,7 +38,7 @@ in
     "firefox"
     "obsidian"
     "alacritty"
-    # "font-blex-mono-nerd-font"
+    "utm"
   ];
   home-manager.sharedModules = [
       {
