@@ -125,8 +125,9 @@ in {
     };
 
     home.file = {
-      ".config/zsh.d/completion.zsh".source = ./completion.zsh;
+      ".config/zsh.d/aliases.zsh".source = ./aliases.zsh;
       ".config/zsh.d/bindings.zsh".source = ./bindings.zsh;
+      ".config/zsh.d/completion.zsh".source = ./completion.zsh;
       ".config/zsh.d/functions.zsh".source = ./functions.zsh;
       ".config/zsh.d/options.zsh".source = ./options.zsh;
       ".config/dircolors/dircolors".source = ../dircolors/dircolors;
