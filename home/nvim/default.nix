@@ -18,6 +18,7 @@ in {
 
       plugins = with pkgs.vimPlugins; [
           fzfWrapper
+          fzf-lua
           gruvbox
           kanagawa-nvim
           neocomplete-vim

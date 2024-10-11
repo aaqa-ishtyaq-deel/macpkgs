@@ -57,7 +57,7 @@ Include ~/.orbstack/ssh/config
       parallel
       mosh
       gnutar
-      the_silver_searcher
+      silver-searcher
       universal-ctags
       bat
     ;
