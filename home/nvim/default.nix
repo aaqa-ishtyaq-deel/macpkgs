@@ -44,7 +44,6 @@ in {
 
           base16-vim
           # nvim-web-devicons
-
           {
             plugin = nvim-treesitter;
             type = "lua";
