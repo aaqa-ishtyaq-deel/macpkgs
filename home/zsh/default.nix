@@ -121,6 +121,8 @@ in {
         ### RANCHER DESKTOP
         export PATH="/Users/aaqaishtyaq/.rd/bin:$PATH"
         export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+
+        export HOMEBREW_CASK_OPTS="--appdir=~/Applications --fontdir=~/Library/Fonts"
       '';
     };
 
