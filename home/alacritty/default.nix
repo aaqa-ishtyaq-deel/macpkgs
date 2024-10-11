@@ -10,7 +10,8 @@ in {
   };
   config = mkIf cfg.enable {
     home.file = {
-      ".config/alacritty/alacritty.toml".source = ./alacritty.toml;
+      ".config/alacritty/themes/default.toml".source = ./default_theme.toml;
+      ".config/alacritty/config.toml".source = ./alacritty.toml;
     };
   };
 }

@@ -14,6 +14,7 @@ in {
       viAlias = true;
       vimAlias = true;
       vimdiffAlias = true;
+      # leader = "."
 
       plugins = with pkgs.vimPlugins; [
           fzfWrapper
@@ -41,6 +42,7 @@ in {
           plenary-nvim
 
           base16-vim
+          # nvim-web-devicons
 
           {
             plugin = nvim-treesitter;
