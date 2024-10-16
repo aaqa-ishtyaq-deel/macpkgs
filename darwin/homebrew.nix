@@ -40,6 +40,7 @@ in
     "obsidian"
     "utm"
     "emacs"
+    "flameshot"
   ];
   home-manager.sharedModules = [
       {
