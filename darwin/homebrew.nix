@@ -39,7 +39,6 @@ in
     "firefox"
     "obsidian"
     "utm"
-    "emacs"
     "flameshot"
   ];
   home-manager.sharedModules = [
