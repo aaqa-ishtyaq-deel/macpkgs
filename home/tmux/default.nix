@@ -25,7 +25,6 @@ in {
       escapeTime = 0;
       newSession = true;
       terminal = "xterm-256color";
-      keyMode = "vi";
       extraConfig = ''
         # Configuration
         setw -g automatic-rename on
@@ -46,9 +45,6 @@ in {
         set -g base-index 1
         setw -g pane-base-index 1
 
-        # Reload tmux configuration
-        bind C-l source-file ~/.tmux.conf \; display "Config reloaded"
-
         # new window and retain cwd
         bind c new-window -c "#{pane_current_path}"
 
@@ -62,10 +58,6 @@ in {
 
         # Zoom pane
         bind z resize-pane -Z
-
-        # Kill pane/window/session shortcuts
-        bind x kill-pane
-        bind X kill-window
 
         # Detach from session
         bind d detach
@@ -150,67 +142,11 @@ in {
         # ===   Key bindings     ===
         # ==========================
 
-        # # Unbind default key bindings, we're going to override
-        # unbind "\$" # rename-session
-        # unbind ,    # rename-window
-        # unbind %    # split-window -h
-        # unbind '"'  # split-window
-        # unbind }    # swap-pane -D
-        # unbind {    # swap-pane -U
-        # unbind [    # paste-buffer
-        # unbind ]
-        # unbind "'"  # select-window
-        # unbind n    # next-window
-        # unbind p    # previous-window
-        # unbind l    # last-window
-        # unbind M-n  # next window with alert
-        # unbind M-p  # next window with alert
-        # unbind o    # focus thru panes
-        # unbind &    # kill-window
-        # unbind "#"  # list-buffer
-        # unbind =    # choose-buffer
-        # unbind z    # zoom-pane
-        # unbind M-Up  # resize 5 rows up
-        # unbind M-Down # resize 5 rows down
-        # unbind M-Right # resize 5 rows right
-        # unbind M-Left # resize 5 rows left
-
-        # Edit configuration and reload
-        bind C-e new-window -n 'tmux.conf' "sh -c '\${EDITOR:-vim} ~/.tmux.conf && tmux source ~/.tmux.conf && tmux display \"Config reloaded\"'"
-
-        # Reload tmux configuration
-        bind C-r source-file ~/.tmux.conf \; display "Config reloaded"
-
-        # new window and retain cwd
-        bind c new-window -c "#{pane_current_path}"
-
-        # Prompt to rename window right after it's created
-        #  set-hook -g after-new-window 'command-prompt -I "#{window_name}" "rename-window '%%'"'
-
-        # Rename session and window
-        bind r command-prompt -I "#{window_name}" "rename-window '%%'"
-        bind R command-prompt -I "#{session_name}" "rename-session '%%'"
-
-        # Split panes
-        bind | split-window -h -c "#{pane_current_path}"
-        bind - split-window -v -c "#{pane_current_path}"
-
-        # Select pane and windows
-        bind -r C-[ previous-window
-        bind -r C-] next-window
-        bind -r [ select-pane -t :.-
-        bind -r ] select-pane -t :.+
-        bind -r Tab last-window   # cycle thru MRU tabs
-        bind -r C-o swap-pane -D
-
         # Resize windows
         bind k resize-pane -U 5
         bind j resize-pane -D 5
         bind h resize-pane -L 5
         bind l resize-pane -R 5
-
-        # Zoom pane
-        bind + resize-pane -Z
 
         # Link window
         bind L command-prompt -p "Link window from (session:window): " "link-window -s %% -a"
@@ -236,6 +172,9 @@ in {
 
         # Hide status bar on demand
         bind C-s if -F '#{s/off//:status}' 'set status off' 'set status on'
+
+        setw -g mode-keys vi
+        set-option -g default-command "zsh"
       '';
     };
 

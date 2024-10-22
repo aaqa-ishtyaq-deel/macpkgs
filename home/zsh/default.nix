@@ -121,12 +121,15 @@ in {
         ### RANCHER DESKTOP
         export PATH="/Users/aaqaishtyaq/.rd/bin:$PATH"
         export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+
+        export HOMEBREW_CASK_OPTS="--appdir=~/Applications --fontdir=~/Library/Fonts"
       '';
     };
 
     home.file = {
-      ".config/zsh.d/completion.zsh".source = ./completion.zsh;
+      ".config/zsh.d/aliases.zsh".source = ./aliases.zsh;
       ".config/zsh.d/bindings.zsh".source = ./bindings.zsh;
+      ".config/zsh.d/completion.zsh".source = ./completion.zsh;
       ".config/zsh.d/functions.zsh".source = ./functions.zsh;
       ".config/zsh.d/options.zsh".source = ./options.zsh;
       ".config/dircolors/dircolors".source = ../dircolors/dircolors;

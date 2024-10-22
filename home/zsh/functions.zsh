@@ -157,7 +157,38 @@ shared_login() {
     aws sso login --profile shared
 }
 
+dev_login() {
+    aws sso login --profile dev-eks
+    aws eks update-kubeconfig --name demo --region eu-west-1 --profile demo-eks
+}
+
+prod_login() {
+    aws sso login --profile prod-eks
+    aws eks update-kubeconfig --name deel-prod --region eu-west-1 --profile prod-eks
+}
+
 deel_login() {
-    giger_login
+    prod_login
+    dev_login
     shared_login
+    giger_login
+}
+
+edh() {
+    code .
+}
+
+deel_helm_generate_template() {
+    local serviceName
+    serviceName="$1"
+    helm_env="${2-prod}"
+    echo "$servicename*"
+    rm -rf "$servicename*" || :
+
+    (
+        helm template charts/$serviceName -f $helm_env/config/deel-appset/values-$serviceName.yaml > $serviceName-pr-$helm_env-generated.yaml || :
+    ) &&
+    (
+        helm template ../gitops-applications-dev/charts/$serviceName -f ../gitops-applications-dev/$helm_env/config/deel-appset/values-$serviceName.yaml > $serviceName-dev-$helm_env-generated.yaml || :
+    )
 }

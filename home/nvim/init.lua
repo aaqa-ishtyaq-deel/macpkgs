@@ -32,7 +32,7 @@ else
 end
 
 w.colorcolumn = [[100]]
-w.wrap = false
+w.wrap = true
 
 o.termguicolors = true
 
@@ -75,3 +75,5 @@ require("telescope").setup({
 })
 
 require("telescope").load_extension "file_browser"
+
+require("fzf-lua").setup({ "fzf-vim" })

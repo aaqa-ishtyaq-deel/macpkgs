@@ -1,0 +1,22 @@
+#!/bin/sh
+
+grfh() {
+    : '
+        git fetch origin main
+        git reset --hard FETCH_HEAD
+        usage:
+        grfh <branch-name>
+    '
+    local branch
+    branch=$1
+
+    if [ "$branch" == "" ]; then
+        echo "=> branch not provided, fetching default branch"
+        branch=$(git remote show origin | sed -n '/HEAD branch/s/.*: //p')
+    fi
+
+    git fetch origin $branch
+    git reset --hard FETCH_HEAD
+}
+
+grfh "$@"
