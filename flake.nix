@@ -19,9 +19,14 @@
       url = "github:nix-community/comma";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    mac-app-util = {
+      url = "github:hraban/mac-app-util";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, darwin, nixpkgs, home-manager, flake-utils, ... }@inputs:
+  outputs = { self, darwin, nixpkgs, home-manager, flake-utils, mac-app-util, ... }@inputs:
   let
     home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/master.tar.gz";
     # home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/release-21.11.tar.gz";
@@ -100,16 +105,20 @@
 
       darwinModules = {
         # My configurations
-        aaqa-bootstrap = import ./darwin/bootstrap.nix;
-        aaqa-general = import ./darwin/general.nix;
-        aaqa-homebrew = import ./darwin/homebrew.nix;
+        darwin-bootstrap = import ./darwin/bootstrap.nix;
+        darwin-general = import ./darwin/general.nix;
+        darwin-homebrew = import ./darwin/homebrew.nix;
+        darwin-pam = import ./darwin/pam.nix;
 
         users-primaryUser = import ./modules/darwin/users.nix;
       };
 
       homeManagerModules = {
         # My configurations
-        aaqa-home = import ./home;
+        darwin-home = import ./home;
+
+        # setup apps from nix-darwin to show up in spotlight/alfred.
+        darwin-spotlight = inputs.mac-app-util.homeManagerModules.default;
 
         home-user-info = { lib, ... }: {
           options.home.user-info =

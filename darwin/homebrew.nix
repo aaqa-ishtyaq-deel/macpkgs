@@ -40,6 +40,7 @@ in
     "obsidian"
     "utm"
     "flameshot"
+    "hiddenbar"
   ];
   home-manager.sharedModules = [
       {
