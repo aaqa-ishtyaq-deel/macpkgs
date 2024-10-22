@@ -32,7 +32,7 @@ else
 end
 
 w.colorcolumn = [[100]]
-w.wrap = false
+w.wrap = true
 
 o.termguicolors = true
 
