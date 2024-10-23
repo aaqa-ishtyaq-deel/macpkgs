@@ -56,9 +56,6 @@ in {
         bind | split-window -h -c "#{pane_current_path}"
         bind - split-window -v -c "#{pane_current_path}"
 
-        # Zoom pane
-        bind z resize-pane -Z
-
         # Detach from session
         bind d detach
         bind D if -F '#{session_many_attached}' \
