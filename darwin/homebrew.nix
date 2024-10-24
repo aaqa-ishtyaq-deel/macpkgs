@@ -31,16 +31,16 @@ in
   # limitiations, e.g., Transmit, install the Homebrew Cask.
   homebrew.casks = [
     "alacritty"
-    "hammerspoon"
-    "visual-studio-code"
-    "openlens"
-    "meetingbar"
-    "dbeaver-community"
     "firefox"
-    "obsidian"
-    "utm"
     "flameshot"
+    "hammerspoon"
     "hiddenbar"
+    "meetingbar"
+    "obsidian"
+    "openlens"
+    "tableplus"
+    "utm"
+    "visual-studio-code"
   ];
   home-manager.sharedModules = [
       {

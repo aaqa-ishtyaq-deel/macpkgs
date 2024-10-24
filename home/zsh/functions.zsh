@@ -192,3 +192,11 @@ deel_helm_generate_template() {
         helm template ../gitops-applications-dev/charts/$serviceName -f ../gitops-applications-dev/$helm_env/config/deel-appset/values-$serviceName.yaml > $serviceName-dev-$helm_env-generated.yaml || :
     )
 }
+
+lens() {
+    local namespace
+    namespace="$1"
+
+    kubens ${namespace} &
+    k9s -n ${namespace} -c pod
+}
