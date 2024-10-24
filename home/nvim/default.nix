@@ -126,11 +126,12 @@ in {
 
       extraConfig = ''
         luafile ${./init.lua}
+        source ${./yami.vim}
 
+        set termguicolors
         hi Normal guibg=NONE ctermbg=NONE
         set background=dark
 
-        let base16colorspace=256
         highlight Normal ctermbg=none
         highlight NonText ctermbg=none
         highlight Normal guibg=none
@@ -138,7 +139,6 @@ in {
       '';
 
       # extraConfig = lib.fileContents ./init.lua;
-      # extraLuaConfig = lib.fileContents ./init.lua;
     };
 
     home.sessionVariables = {
